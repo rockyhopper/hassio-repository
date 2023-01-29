@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export SPRING_APPLICATION_JSON=$(cat /data/options.json)
+
+java -jar /app.jar
+
+echo "All done!" > /share/wes_addon_output.txt
