@@ -1,14 +1,10 @@
 name: "W.E.S (Development version)"
-version: "dev-latest"
-slug: WES_dev
+version: dev-latest
+slug: wes_dev
 description: "Development version of 'Web Energie Superviseur' Add-on for HA"
-url: "https://github.com/rockyhopper/smarthome/tree/dev"
+url: "https://github.com/rockyhopper/hassio-repository/tree/main/wes_dev"
 arch:
-  - armhf
-  - armv7
-  - aarch64
   - amd64
-  - i386
 init: false
 map:
   - share:rw
@@ -18,7 +14,7 @@ options:
 schema:
   message: "str?"
   gretings.suffix: "str?"
-#image: "rockyhopper/smarthome/{arch}-ha-wes"
+image: "rockyhopper/ha-addon-wes_dev"
 apparmor: false
 ingress: true
 ingress_port: 8080
