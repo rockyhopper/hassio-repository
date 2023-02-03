@@ -21,7 +21,7 @@ RUN apk add zulu8-jdk maven
 
 RUN export GITHUB_USERNAME=$GITHUB_USERNAME & export GITHUB_PUBLIC_TOKEN=$GITHUB_PUBLIC_TOKEN
 
-RUN mvn -s /root/.m2/settings.xml org.apache.maven.plugins:maven-dependency-plugin:3.5.0:copy -Dmdep.stripVersion=true -Dmdep.stripClassifier=true -Dartifact=org.rockhopper.smarthome:wes2mqtt:$wes2mqtt_version -DoutputDirectory=/  
+RUN mvn -s /root/.m2/settings.xml org.apache.maven.plugins:maven-dependency-plugin:3.5.0:copy -Dmdep.stripVersion=true -Dmdep.stripClassifier=true -Dartifact=org.rockhopper.smarthome:wes2mqtt:$wes2mqtt_version -DoutputDirectory=/  $GITHUB_USERNAME$GITHUB_PUBLIC_TOKEN 
 
 RUN unset GITHUB_USERNAME & unset GITHUB_TOKEN
 
