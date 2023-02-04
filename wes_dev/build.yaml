@@ -8,5 +8,4 @@ labels:
 args:
   TEMPIO_VERSION: "2021.09.0"
 # wes2mqtt_version: dev-latest-SNAPSHOT
-  GITHUB_USERNAME: rockyhopper
-  GITHUB_PUBLIC_TOKEN: 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
+

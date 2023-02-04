@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ARG TEMPIO_VERSION BUILD_ARCH GITHUB_USERNAME GITHUB_PUBLIC_TOKEN
+ARG TEMPIO_VERSION BUILD_ARCH
 ARG wes2mqtt_version=dev-latest-SNAPSHOT
 
 RUN \
@@ -19,11 +19,7 @@ RUN echo "https://repos.azul.com/zulu/alpine" | tee -a /etc/apk/repositories
 RUN apk update
 RUN apk add zulu8-jdk maven
 
-RUN export GITHUB_USERNAME=$GITHUB_USERNAME & export GITHUB_PUBLIC_TOKEN=$GITHUB_PUBLIC_TOKEN
-
-RUN mvn -s /root/.m2/settings.xml org.apache.maven.plugins:maven-dependency-plugin:3.5.0:copy -Dmdep.stripVersion=true -Dmdep.stripClassifier=true -Dartifact=org.rockhopper.smarthome:wes2mqtt:$wes2mqtt_version -DoutputDirectory=/  $GITHUB_USERNAME$GITHUB_PUBLIC_TOKEN 
-
-RUN unset GITHUB_USERNAME & unset GITHUB_TOKEN
+RUN mvn org.apache.maven.plugins:maven-dependency-plugin:3.5.0:copy -Dmdep.stripVersion=true -Dmdep.stripClassifier=true -Dartifact=org.rockhopper.smarthome:wes2mqtt:$wes2mqtt_version -DoutputDirectory=/
 
 RUN apk del maven && rm /var/cache/apk/*
 
