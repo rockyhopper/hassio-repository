@@ -5,6 +5,7 @@ description: "Development version of 'Web Energie Superviseur' Add-on for HA"
 url: "https://github.com/rockyhopper/hassio-repository/tree/main/wes_dev"
 arch:
   - amd64
+  - armv7
 init: false
 map:
   - share:rw

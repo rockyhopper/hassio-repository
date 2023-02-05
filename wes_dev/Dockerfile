@@ -11,13 +11,8 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 
-# add Azul's public key
-RUN wget -P /etc/apk/keys/ https://cdn.azul.com/public_keys/alpine-signing@azul.com-5d5dc44c.rsa.pub
-# add the Azul APK repository
-RUN echo "https://repos.azul.com/zulu/alpine" | tee -a /etc/apk/repositories
-# update the list of packages
-RUN apk update
-RUN apk add zulu8-jdk maven
+RUN apk update 
+RUN apk add openjdk8 maven
 
 RUN mvn org.apache.maven.plugins:maven-dependency-plugin:3.5.0:copy -Dmdep.stripVersion=true -Dmdep.stripClassifier=true -Dartifact=org.rockhopper.smarthome:wes2mqtt:$wes2mqtt_version -DoutputDirectory=/
 
