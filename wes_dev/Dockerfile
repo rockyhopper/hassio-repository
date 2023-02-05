@@ -12,10 +12,15 @@ RUN \
 COPY rootfs /
 
 RUN apk update 
-RUN apk add openjdk8 maven
+RUN apk add openjdk8
 
-RUN mvn org.apache.maven.plugins:maven-dependency-plugin:3.5.0:copy -Dmdep.stripVersion=true -Dmdep.stripClassifier=true -Dartifact=org.rockhopper.smarthome:wes2mqtt:$wes2mqtt_version -DoutputDirectory=/
+RUN echo "export WES2MQTT_VERSION='$(curl https://s01.oss.sonatype.org/content/repositories/snapshots/org/rockhopper/smarthome/wes2mqtt/dev-latest-SNAPSHOT/maven-metadata.xml \
+| grep '<value>.*</value>' \
+| tr -s " " \
+| cut -d ">" -f2 \
+| cut -d "<" -f1 \
+| sort -V -r \
+| head -1)'" >> /envfile
 
-RUN apk del maven && rm /var/cache/apk/*
-
+RUN . /envfile; curl -o /wes2mqtt.jar https://s01.oss.sonatype.org/content/repositories/snapshots/org/rockhopper/smarthome/wes2mqtt/dev-latest-SNAPSHOT/wes2mqtt-$WES2MQTT_VERSION.jar
 
