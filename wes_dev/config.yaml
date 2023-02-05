@@ -15,7 +15,7 @@ options:
 schema:
   message: "str?"
   gretings.suffix: "str?"
-image: "rockyhopper/ha-addon-wes_dev"
+image: "rockyhopper/{arch}-ha-addon-wes_dev"
 apparmor: false
 ingress: true
 ingress_port: 8080
