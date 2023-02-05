@@ -2,6 +2,6 @@
 
 export SPRING_APPLICATION_JSON=$(cat /data/options.json)
 
-java -jar /app.jar
+java -jar /wes2mqtt.jar
 
 echo "All done!" > /share/wes_addon_output.txt
