@@ -14,7 +14,7 @@ COPY rootfs /
 RUN apk update 
 RUN apk add openjdk8
 
-RUN echo "export WES2MQTT_VERSION='$(curl https://s01.oss.sonatype.org/content/repositories/snapshots/org/rockhopper/smarthome/wes2mqtt/dev-latest-SNAPSHOT/maven-metadata.xml \
+RUN echo "export WES2MQTT_VERSION='$(curl https://s01.oss.sonatype.org/content/repositories/snapshots/org/rockhopper/smarthome/wes2mqtt/${wes2mqtt_version}/maven-metadata.xml \
 | grep '<value>.*</value>' \
 | tr -s " " \
 | cut -d ">" -f2 \
