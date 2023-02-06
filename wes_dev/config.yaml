@@ -11,7 +11,7 @@ map:
   - share:rw
 options:
   message: "Hello world. (SRC).."
-  gretings.suffix: "'Default Suffix from HA'"
+  gretings.suffix: "'Default Suffix from HA (built by github)"
 schema:
   message: "str?"
   gretings.suffix: "str?"
