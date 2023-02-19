@@ -12,9 +12,33 @@ map:
 options:
   message: "Hello world. (SRC).."
   gretings.suffix: "'Default Suffix from HA (built by github)"
+  mqtt.username: $(bashio::services mqtt "username")
+  mqtt.password: $(bashio::services mqtt "password")
+  mqtt.host-url: $(bashio::services mqtt "host")
+  wes.ipAddress: null
+  wes.macAddress: null
+  wes.tcpPort: 1500
+  wes.httpUser: admin
+  wes.httpPass: wes
+  wes.ftpUser: adminftp
+  wes.ftpPass: wesftp
+  wes.discoveryInterfaceIPs: 192.168.1.1/24
+  logging.level.root: ["debug", "info", "warn", "error"]
 schema:
   message: "str?"
   gretings.suffix: "str?"
+  mqtt.username: "str"
+  mqtt.password: "password?"
+  mqtt.host-url: "str"
+  wes.ipAddress: "str?"
+  wes.macAddress: "str?"
+  wes.tcpPort: "port?"
+  wes.httpUser: "str?"
+  wes.httpPass: "password?"
+  wes.ftpUser: "str?"
+  wes.ftpPass: "password?"
+  wes.discoveryInterfaceIPs: "str?"
+  logging.level.root: ["str?"]
 image: "rockyhopper/{arch}-ha-addon-wes_dev"
 apparmor: false
 ingress: true
@@ -24,5 +48,3 @@ ports:
   8080/tcp: 8080
 ports_description:
   8080/tcp: WES to Mqtt Web Interface
-
-  
