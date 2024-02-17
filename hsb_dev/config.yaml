@@ -1,0 +1,34 @@
+name: "H.S.B (Development version)"
+version: dev-latest
+slug: hsb_dev
+description: "Development version of 'Home Service Bus' Add-on for HA"
+url: "https://github.com/rockyhopper/smarthome/tree/feature/hsb"
+arch:
+  - amd64
+  - armv7
+init: false
+map:
+  - share:rw
+options:
+  message: "Hello world HSB. (SRC).."
+  gretings.suffix: "'Default Suffix from HA (built by github)"
+  mqtt.username: $(bashio::services mqtt "username")
+  mqtt.password: $(bashio::services mqtt "password")
+  mqtt.host-url: $(bashio::services mqtt "host")
+  logging.level.root: ["debug", "info", "warn", "error"]
+schema:
+  message: "str?"
+  gretings.suffix: "str?"
+  mqtt.username: "str"
+  mqtt.password: "password?"
+  mqtt.host-url: "str"
+  logging.level.root: ["str?"]
+image: "rockyhopper/{arch}-ha-addon-hsb_dev"
+apparmor: false
+ingress: true
+ingress_port: 8081
+ingress_stream: true
+ports:
+  8081/tcp: 8081
+ports_description:
+  8080/tcp: HSB to Mqtt Web Interface
