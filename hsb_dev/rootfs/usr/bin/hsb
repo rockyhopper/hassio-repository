@@ -2,6 +2,6 @@
 
 export SPRING_APPLICATION_JSON=$(cat /data/options.json)
 
-java -jar /hsb2mqtt.jar
+java -jar /hsb.jar
 
 echo "All done!" > /share/hsb_addon_output.txt
