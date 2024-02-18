@@ -15,6 +15,10 @@ options:
   mqtt.username: $(bashio::services mqtt "username")
   mqtt.password: $(bashio::services mqtt "password")
   mqtt.host-url: $(bashio::services mqtt "host")
+  ha.protocol: "http"
+  ha.host: "homeassistant.local"
+  ha.port: 8123
+  ha.bearer: secret
   logging.level.root: ["debug", "info", "warn", "error"]
 schema:
   message: "str?"
@@ -22,8 +26,8 @@ schema:
   mqtt.username: "str"
   mqtt.password: "password?"
   mqtt.host-url: "str"
-  ha.protocol: "str"
-  ha.host: "host"
+  ha.protocol: "str?"
+  ha.host: "host?"
   ha.port: "port?"
   ha.bearer: "bearer?"
   logging.level.root: ["str?"]
