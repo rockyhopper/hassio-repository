@@ -25,7 +25,7 @@ schema:
   ha.protocol: "str"
   ha.host: "host"
   ha.port: "port?"
-  ha.bearer: ¨bearer?¨
+  ha.bearer: "bearer?"
   logging.level.root: ["str?"]
 image: "rockyhopper/{arch}-ha-addon-hsb_dev"
 apparmor: false
