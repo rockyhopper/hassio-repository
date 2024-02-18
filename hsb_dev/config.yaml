@@ -27,18 +27,11 @@ schema:
   mqtt.password: "password?"
   mqtt.host-url: "str"
   ha.protocol: "str?"
-  ha.host: "host?"
+  ha.host: "str?"
   ha.port: "port?"
-  ha.bearer: "bearer?"
+  ha.bearer: "password?"
   logging.level.root: ["str?"]
 image: "rockyhopper/{arch}-ha-addon-hsb_dev"
 apparmor: false
-ingress: true
-ingress_port: 8082
-ingress_stream: true
 homeassistant_api: true
-ports:
-  8082/tcp: 8082
-ports_description:
-  8080/tcp: HSB Web Interface
 
