@@ -28,7 +28,9 @@ apparmor: false
 ingress: true
 ingress_port: 8081
 ingress_stream: true
+homeassistant_api: true
 ports:
   8081/tcp: 8081
 ports_description:
-  8080/tcp: HSB to Mqtt Web Interface
+  8080/tcp: HSB Web Interface
+

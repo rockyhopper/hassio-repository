@@ -22,5 +22,5 @@ RUN echo "export HSB_VERSION='$(curl https://s01.oss.sonatype.org/content/reposi
 | sort -V -r \
 | head -1)'" >> /envfile
 
-RUN . /envfile; curl -o /hsb.jar https://s01.oss.sonatype.org/content/repositories/snapshots/org/rockhopper/smarthome/hsb/dev-latest-SNAPSHOT/hsb-$WES2MQTT_VERSION.jar
+RUN . /envfile; curl -o /hsb.jar https://s01.oss.sonatype.org/content/repositories/snapshots/org/rockhopper/smarthome/hsb/dev-latest-SNAPSHOT/hsb-HSB_VERSION.jar
 
