@@ -19,6 +19,7 @@ options:
   ha.host: "homeassistant.local"
   ha.port: 8123
   ha.bearer: secret
+  phone.responseNumber: "+33........."
   logging.level.root: ["debug", "info", "warn", "error"]
 schema:
   message: "str?"
@@ -30,6 +31,7 @@ schema:
   ha.host: "str?"
   ha.port: "port?"
   ha.bearer: "password?"
+  phone.responseNumber: "str?"
   logging.level.root: ["str?"]
 image: "rockyhopper/{arch}-ha-addon-hsb_dev"
 apparmor: false
