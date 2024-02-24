@@ -19,7 +19,7 @@ options:
   ha.host: "homeassistant.local"
   ha.port: 8123
   ha.bearer: secret
-  phone.responseNumber: "+33........."
+  phone.responseNumber: "0033........."
   logging.level.root: ["debug", "info", "warn", "error"]
 schema:
   message: "str?"
