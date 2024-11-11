@@ -8,5 +8,5 @@ labels:
 args:
   TEMPIO_VERSION: "2021.09.0"
 # hsb_version: dev-latest-SNAPSHOT
-# Use (Build #? of Nov 11, 2024 or later)
+# Use (Build #? of Nov 11th, 2024 or later)
 
