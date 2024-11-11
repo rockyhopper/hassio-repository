@@ -36,4 +36,10 @@ schema:
 image: "rockyhopper/{arch}-ha-addon-hsb_dev"
 apparmor: false
 homeassistant_api: true
-
+ingress: true
+ingress_port: 8082
+ingress_stream: true
+ports:
+  8082/tcp: 8082
+ports_description:
+  8082/tcp: WES to Mqtt Web Interface
