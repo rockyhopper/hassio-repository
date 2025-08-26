@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 ARG TEMPIO_VERSION BUILD_ARCH
-ARG HSB_VERSION=0.9.1-beta
+ARG HSB_VERSION=0.9.2-beta
 
 RUN \
     curl -sSLf -o /usr/bin/tempio \
