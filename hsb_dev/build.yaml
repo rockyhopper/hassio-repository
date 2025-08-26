@@ -7,6 +7,6 @@ labels:
   org.opencontainers.image.licenses: "Apache License 2.0"
 args:
   TEMPIO_VERSION: "2021.09.0"
-# hsb_version: dev-latest-SNAPSHOT
+# hsb_version: 0.9.1-beta
 # Use (Build #? of Nov 11th, 2024 or later)
 
