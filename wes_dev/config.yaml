@@ -1,5 +1,5 @@
 name: "W.E.S (Development version)"
-version: dev-latest
+version: 0.9.2-beta
 slug: wes_dev
 description: "Development version of 'Web Energie Superviseur' Add-on for HA"
 url: "https://github.com/rockyhopper/hassio-repository/tree/main/wes_dev"
